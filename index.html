@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Webpage</title>
+  <link rel="icon" type="image/png" href="77489-roblox.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: flash 2s infinite;
+    }
+
+    @keyframes flash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 0.7; }
+    }
+
+    .box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #121212;
+      border-radius: 16px;
+      padding: 40px 30px;
+      width: 440px;
+      max-width: 90vw;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.03);
+    }
+
+    .box h1 {
+      color: white;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+    }
+
+    .button {
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+      border-radius: 10px;
+      padding: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(to bottom, #3c3c3c, #222);
+    }
+
+    .small-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .half-button {
+      flex: 1 1 50%;
+      padding: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 8px;
+      background: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .half-button:hover {
+      background: linear-gradient(to bottom, #3a3a3a, #1f1f1f);
+    }
+
+    .third-button {
+      flex: 1 1 33.33%;
+      padding: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 8px;
+      background: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+      color: white;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .third-button:hover {
+      background: linear-gradient(to bottom, #3a3a3a, #1f1f1f);
+    }
+
+    /* MOBILE */
+    @media (max-width: 500px) {
+      .box {
+        padding: 30px 20px;
+        width: 90vw;
+      }
+
+      .box h1 {
+        font-size: 1.5rem;
+      }
+
+      /* Keep the small-group flex on mobile but stack only if really needed */
+      .small-group {
+        flex-wrap: nowrap;
+      }
+
+      /* Big buttons remain full width */
+      .button {
+        font-size: 0.95rem;
+        padding: 12px;
+        margin-bottom: 15px;
+      }
+
+      /* Keep half-buttons side by side with some gap */
+      .half-button {
+        flex: 1 1 48%;
+        font-size: 0.85rem;
+        padding: 10px;
+      }
+
+      /* Keep third-buttons side by side with some gap */
+      .third-button {
+        flex: 1 1 30%;
+        font-size: 0.85rem;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle effect -->
+  <script>
+    for (let i = 0; i < 200; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('particle');
+      dot.style.left = Math.random() * 100 + 'vw';
+      dot.style.top = Math.random() * 100 + 'vh';
+      dot.style.animationDuration = (1 + Math.random() * 2) + 's';
+      dot.style.opacity = Math.random();
+      document.body.appendChild(dot);
+    }
+  </script>
+
+  <!-- Main Box -->
+  <div class="box">
+    <h1>AUTOHAR</h1>
+
+    <!-- Big Buttons -->
+    <a href="https://bloxlab.st/create?ref=oe4SaTnWJmPyuzE85h1dNF1B4" class="button">Create Dashboard</a>
+    <a href="https://bloxlab.st/controller/sign-in" class="button">Controller Sign In</a>
+
+    <!-- 2 Half Buttons -->
+    <div class="small-group">
+      <a href="https://justpaste.it/9bp58" class="half-button">Explanation</a>
+      <a href="https://justpaste.it/8ej8c" class="half-button">Tutorials</a>
+    </div>
+
+    <!-- 3 Third Buttons -->
+    <div class="small-group">
+      <a href="https://justpaste.it/cspty" class="third-button">Videos</a>
+      <a href="https://justpaste.it/cspty" class="third-button">Thumbnails</a>
+      <a href="https://justpaste.it/a6kyt" class="third-button">Additional</a>
+    </div>
+  </div>
+</body>
+</html>
